@@ -1,0 +1,21 @@
+{
+	"name": "string-algo",
+	"type": "static lib",
+	"includeFolders": {
+		"public": "include"
+	},
+	"files": [
+		"include/StringAlgo/**.hpp",
+		"src/**.cpp"
+	],
+	"defines": {
+		"interface": "STRINGALGO_PCH=<StringAlgo/StringAlgoPCH.hpp>"
+	},
+	"pch": {
+		"header": "include/StringAlgo/StringAlgoPCH.hpp",
+		"source": "src/StringAlgoPCH.cpp",
+		"definition": "STRINGALGO_PCH"
+	},
+	"description": "A string algorithm C++ library",
+	"version": "0.1.0"
+}
