@@ -72,7 +72,7 @@ inline bool toFloatNoSkipWs(T& float_, char const* begin_, char const* end_)
 template <typename T>
 inline bool to(T& outValue_, char const* begin_, char const* end_)
 {
-	while(begin_ != end_ && (*begin_ != '-' || *begin_ < '0' || *begin_ > '9'))
+	while(begin_ != end_ && *begin_ != '-' && (*begin_ < '0' || *begin_ > '9'))
 		++begin_;
 	
 	if constexpr (std::is_integral_v<T>)
