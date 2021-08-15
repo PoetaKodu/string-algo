@@ -19,10 +19,13 @@ inline bool toIntNoSkipWs(T& int_, char const* begin_, char const* end_)
 	if constexpr (!std::is_unsigned_v<T>)
 		negative = (*begin_ == '-');
 	
+	if (negative)
+		++begin_;
+
 	int val = 0;
 	for(; begin_ != end_; ++begin_)
 	{
-		val = val*10 + (*begin_++ - '0');
+		val = val*10 + (*begin_ - '0');
 	}
 
 	if constexpr (!std::is_unsigned_v<T>)
